@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite1下有多test" verbose="1" preserve-order="true" parallel="false">
+    <test name="有参数的用例的test">
+        <classes>
+            <class name="com.youngk.ReportTest">
+                <methods>
+                    <include name="dataProviderTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="成功的test">
+        <classes>
+            <class name="com.youngk.ReportTest">
+                <methods>
+                    <include name="testTrue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="失败的test">
+        <classes>
+            <class name="com.youngk.ReportTest">
+                <methods>
+                    <include name="testFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.youngk.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>
